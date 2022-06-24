@@ -2,92 +2,172 @@
 
 ## Quick Overview
 
+모듈 설치 
 ```
 npm install
-
-npm start
 ```
 
-\*\* React를 구동할 수 있는 기본적인 환경이 필요합니다.
+json-server 실행(port : 8080)
+```
+node server/server.js
+```
 
-## 진행 가이드
+dev server 실행
+```
+npm run start
+```
+<br>
 
-- 위의 Repository를 포크(`fork`) 하여 개발 URL 제출해주세요.
-  - [URL 제출 링크](https://forms.gle/LcXnfrgtQp5MRrdU8)
-- fork 레파지토리 명은 `wanted-pre-onboarding-fe`로 생성해 주세요.
-- 과제 수행 개수에 따라 기본적인 평가가 이루어집니다.
-- 코드의 일관성, 가독성, 함수 분리,컴포넌트 설계, 코드 퀄리티 등을 기준으로 세부적인 평가가 이루어집니다.
-- 해당 과제에 대한 해설은 개강 후 진행될 예정입니다.
-- 선발하는 과정에서 최소한의 수준을 평가하기 위한 과제로 아래 Assignment 외 다른 부분을 완벽하게 구현하지 않으셔도 됩니다. (평가에 반영하지 않습니다.)
-- README.md를 꼭 작성해 주세요. 본인에 대한 소개나 과제 풀이에 관한 것 등 자유롭게 작성해주시면 됩니다.
-- 함수형 컴포넌트로 개발해주세요. (React Hooks)
+**description**
+- width 사이즈 320px 까지의 모바일 환경 반응형 구현.
+- Mock server(json-server)를 사용하여, 로그인 데이터, Feed 데이터를 GET, PUT Method로 컨트롤.
+- globalStyleVariables를 정의하여, 컴포넌트 스타일 쉽게 변경 가능.
+- 사용자의 편의 중심 개발.
+- 에러가 나더라도 프로세스에 영향이 가지 않도록 에러 처리.
+<br><br>
 
-\*문의 사항은 사전 과제 Repository의 Issue로 등록해 주세요.
-
-# :: 과제 안내
-
+**추가로 설치된 라이브러리**
+- react-icons 
+icon 사용
+- json-server
+Restful mock server 구현
+- polished
+style-components 에서 lighten, darken function 사용.
+- axios
+json-server와 http 통신
 ---
 
-## Assignment 1 - `Login`
+## Assignment 1 - Login 
 
-- 로그인 컴포넌트를 개발합니다. (최소화 - `input` 2개, `button` 1개)
-- 약간의 랜더링 최적화를 고려해주세요. (Hint: Ref 사용)
-- 로그인 시(ID, PW 입력 후 버튼 클릭)
-  - Local Storage 에 로그인 정보 저장 (다시 접속했을 경우에 정보가 유지 되어야 합니다.)
-  - 메인 페이지로 이동합니다.(로그인이 완료되면)
-  - 반응형 CSS 적용은 하지 않으셔도 좋습니다. 해당 페이지는 반응형 CSS를 평가하지 않습니다.
+- id, pw 값을 useState()가 아닌 useRef()로 구현하여, 리랜더링 최소화.
+- 로그인 시 localStorage에 현재 유저정보 저장.
+- 로그인 성공 시 main page로 이동.
 
-## Assignment2 - `GNB`
+- 사용자 흐름
+  - InputPassWord 컴포넌트가 focus 상태일때 'Enter' 키로 로그인 할 수 있게 구현.
+  - 사용자가 페이지를 닫고 다시 접속할 때(로그아웃 X), login page를 건너뛰고, main page로 바로 이동.
 
-- 로그인 후 이동하는 메인페이지의 GNB를 구현해주세요.
-- 구현 시 스크롤에 관계 없이 화면 상단에 고정되는 `sticky` GNB 를 구현해주세요.
-- 모바일 사이즈의 경우 가운데 Input 창이 사라져야 하고 양옆으로(space-between) 정렬 되어야 합니다.
-- 가장 오른쪽 아이콘을 Logout으로 변경해주세요.
-- 그 외 기능은 평가하지 않습니다.
-  - (가운데 검색바는 `input` 요소로만 만들어주세요. 기능은 X)
-  - (아이콘은 자유롭게 사용하셔도 괜찮습니다. 아이콘 라이브러리 설치 O)
+## Assignment 2 - GNB
 
-## Assignment3 - `Validation`
+- `position : sticky` property를 사용하여, 레이아웃을 차지하면서 fixed된 효과 구현.
+- window width가 600px 미만일 때, Input 컴포넌트 `display : none`
+- 로그아웃 버튼, 기능 구현
+  - 로그아웃 시, localStorage에 저장된 유저정보 삭제 후 login page로 이동.
 
-- 이메일과 비밀번호의 유효성을 확인합니다.
-  - 이메일 조건 - `@` , `.` 포함
-  - 비밀번호 조건 - 대문자, 숫자, 특수문자 포함 8자리 이상
-  - 로그인 시 이메일과 비밀번호가 등록되어 있는 것과 일치 여부 확인
-- Validation 상태를 CSS로 표현해주세요.
-  - Email Input
-    Validation Check를 통해 Email 형식이 아닌 경우 표시를해주세요. (ex. boder가 red색상으로 변경)
-  - Password Input
-    Validation Check를 통해 Password 형식이 아닌 경우 표시를 해주세요. (ex. boder가 red색상으로 변경.)
-  - Login Button
-    Validation Check가 모두 통과된 경우에만 Button 색상을 진하게 변경해주세요. (통과 되지 못한 경우와 구별이 가능해야 합니다.)
-- 유효성 검사 시 아래 두 가지를 적용해서 구현해주세요.
-  - 정규표현식 사용
-  - Validation 함수 분리
+## Assignment3 - Validation
+- id validation check function
+  ```javascript
+  // src/components/Home/Login.module.js
+  export const checkIdValidation = (id) => {
+    const bool =
+      /^(?=.*\.)(?=.*\@)[A-Za-z\d@~!@#$%^&*()-_=+\|\[\]{};:'",.<>/?]+$/g.test(id);
 
-## Assignment4 - `Routing`
+    return bool;
+  };
+  ```
+  
+- password validation check function
+  ```javascript
+  // src/components/Home/Login.module.js
+  export const checkPwValidation = (pw) => {
+    const bool =
+      /^(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&()\-_=+|[\]{};:'",.<>/?])[A-Za-z\d~!@#$%^&()\-_=+|[\]{};:'",.<>/?]{8,}/g.test(
+        pw
+      );
 
-- 로그인,로그아웃 시 라우팅 로직을 통해 페이지가 이동 되도록 구현해주세요. (Local Storage)
-- 로그인이 완료되면 라우터에서 Main Page로 이동되어야 합니다. (history push 사용 X)
-- 로그아웃되면 (Local Storage가 삭제되면) Login Page로 이동되어야 합니다.(history push 사용 X)
+    return bool;
+  };
+  ```
 
-## Assignment5 - `Feeds`
+- login check function
+  ```javascript
+  export const checkLogin = async (id, pw) => {
+    const response = await axios
+      .get(`http://localhost:8080/users?userName=${id}`)
+      .catch(() => {
+        return {
+          data: [],
+        };
+      });
+    if (response.data.length === 0) {
+      // console.log('동일한 id가 없음');
+      return false;
+    } else if (response.data[0].passWord != pw) {
+      // console.log('비밀번호 오류');
+      return false;
+    } else {
+      // console.log('로그인 성공');
+      return true;
+    }
+  };
+  ```
+  로그인 검증 방법은 ID확인 => PW확인 순으로 이루어 진다. ID확인에서 실패한다면 PW확인은 이루어지지 않는다.
 
-- 피드 컴포넌트를 개발합니다.
-- 레이아웃을 인스타그램과 동일하게 구현해주시면 됩니다. (픽셀 단위까지 맞추실 필요는 없으나 보기에 자연스럽도록 개발해주세요.)
-- 각 Feed의 정보는 public/data 디렉토리에 json형식으로 구성하여 fetch, axios 등을 이용하여 data를 요청해야 합니다.
-- Feed는 최소 3개이상 랜더링 되도록 구현해주세요.
-- 각각의 Feed에 댓글을 추가할 수 있도록 개발해주세요. (Enter key & 클릭으로 게시 가능하도록)
-- Feed는 화면 중앙에 위치 해야하며 모바일 대응이 가능해야 합니다.
-- 게시 후 Input은 초기화 되어야 합니다.
-- Feed의 이미지는 자유롭게 사용하시되 각각 사이즈가 각각 달라야 합니다. (ex. 정사각형, 세로가 긴 것, 가로가 긴 것 등)
-- Feed Image는 자유롭게 사용하셔도 되지만 필요하시면 아래의 url을 사용하세요.(사이즈를 변경하셔도 됩니다. 같은 사이즈 X)
-  "[https://source.unsplash.com/random/600x500](https://source.unsplash.com/random/600x500)"
-  "[https://source.unsplash.com/random/900x500](https://source.unsplash.com/random/900x500)"
-  "[https://source.unsplash.com/random/700x1080](https://source.unsplash.com/random/700x1080)"
-- Feeds의 Image가 로딩된 후 컴포넌트가 로딩 되도록 Loading을 구현해 주세요 (로딩바는 없어도 괜찮습니다. Hint: image.onload)
-  - (아이콘은 자유롭게 사용하셔도 괜찮습니다. icon 라이브러리 설치 O)
-  - 메인 Page 전체에 반응형 CSS가 적용 되어있는지 평가합니다. (Media Query 사용)
 
-## 참고 이미지
+## Assignment4 - Routing
 
-[참고 이미지 링크](https://bclef25.notion.site/1ed6d5b2192b45eeb4104a67f6a77250)
+페이지 이동은 `react-router-dom`의 `useNavigate()` hooks를 이용
+- 로그인 성공
+  - localStorage에 currentUser 저장
+  - main page로 이동
+- 로그아웃
+  - localStorage에 currentUser 제거
+  - main page로 이동
+- login page 접속
+  - localStorage에 currentUser 존재여부 확인
+  - currentUser 존재 시, main page로 이동
+  - currentUser 없을 시, login page 그대로 유지
+- 링크로 main page 접속
+  - localStorage에 currentUser 존재여부 확인
+  - currentUser 존재 시, main page 그대로 유지
+  - currentUser 없을 시, login page로 이동
+
+## Assignment5 - Feeds
+- feed
+  - 화면 중앙에 위치
+  - window width가 400px 미만일 때, `width:100%`로 반응형 구현
+  - 각 피드마다 `[isLoad, setIsLoad] = useState(false)`를 초기값으로 가진다.
+  - 초기상태의 feed 는 `opacity : 0, visibility : hidden` 속성으로 보이지 않는 상태
+  - 이 때, image.onLoad() 를 정의하여, 각 피드의 이미지가 load 완료 되었을 때, `opacity : 1, visivility : visible` 로 변경하여 화면에 보여지게 된다.
+
+- feed data
+  - /sever/data.js 에 위치
+  - 피드 데이터는 `json-server`를 이용하여 구축한 Restful 서버와 HTTP 통신(axios 사용)으로 제어됨
+  - 하나의 피드에 담긴 정보
+    - id
+    - 작성자, 작성자 이미지 주소
+    - 이미지 컨텐츠 주소
+    - 텍스트 컨텐츠
+    - 좋아요 수
+    - 댓글
+- feed 댓글 기능
+  - Enterkey or 클릭 으로 댓글 게시 가능
+  - Input이 비어있다면, 게시 기능 동작하지 않게 구현
+  - 게시 후 Input 값이 비워지게 구현.
+  - 댓글 게시에 오류가 생길 경우, Input값을 비우지 않음.
+  - Feed 댓글이 끊기지 않은 긴 영어 단어로 이루어 져 있을 때, overflow 되는 현상을 `word-break: break-all;` 속성으로 방지
+- feed 이미지
+  - feed image는 400x400 사이즈를 기본값으로 함.
+  - 사진을 클릭해서 볼 수 없는 인스타그램의 특성에 맞추어 원본에 가까운 이미지를 한눈에 볼 수 있게 만드는 것에 초점을 둠.
+  - 가로 세로 중 더 긴 값을 400px로 맞추기 위해 `object-fit: scale-down` 속성을 이용함.
+  - 배경을 `black`으로 설정하여, 400x400 사이즈에 벗어난 부분은 검은색으로 나오게 함(시각적인 효과, 피드 크기 유지).
+  - 만일 400x400 사이즈보다 더 작은 이미지가 업로드 되면, 사진 그대로의 크기를 유지하고, 가운데 위치하게 함.
+  - 예시 피드 이미지로 400x400, 2080x500, 700x1080 사이즈를 사용함.
+  
+
+
+## 사용자 관점에서의 개발 사항
+- login page 에서 InputPassWord 컴포넌트가 focus 상태일때 'Enter' 키로 로그인 할 수 있게 구현.
+- login page 에서 idInput과 pwInput에 입력값이 있을 때만, checkValidation 을 함. 이는 아무 입력이 없는 초기화면에서, validation false로 인한 스타일 변경(border : red)을 방지함.
+
+- 사용자가 페이지를 닫고 다시 접속할 때(로그아웃 X), login page를 건너뛰고, main page로 바로 이동.
+- Feed 댓글을 다는 중 오류 발생 시, Input 값을 비우지 않고 유지.
+- Feed 댓글이 비어있다면, 사용자의 클릭 실수를 대비해 댓글 게시기능 동작하지 않음.
+- Feed 댓글이 끊기지 않은 긴 영어 단어로 이루어 져 있을 때, overflow 되는 현상을 `word-break: break-all;` 속성으로 방지.
+
+
+## 마치며...
+
+로직과 기능을 사용자 흐름을 상상하며 구현했습니다. 모든 사용자 시나리오를 고려했다고 확신 할 수는 없습니다. 하지만 예외적인 시나리오가 발생하더라도 그에 알맞은 적절한 처리를 할 수 있습니다.
+
+함수 또는 컴포넌트 설계, 데이터 구조 등을 확장성과 가독성을 고려해서 개발했습니다. 경험과 식견이 부족하여 잘못된 방법일수도 있지만, 쉽게 접근하고 확장가능하게 만들자는 근본적인 목표는 동일합니다. 이처럼 근본적인 목표를 생각하고 나아간다면, 저는 높은 성장을 이룰것을 확신합니다.

@@ -1,0 +1,151 @@
+{
+  "feeds": [
+    {
+      "id": 1,
+      "writer": "bora",
+      "writerImgUrl": "https://user-images.githubusercontent.com/34260967/174717616-aed62339-a269-46ce-8a51-ba93919d27f4.jpg",
+      "contentsImgUrl": "https://source.unsplash.com/random/400x400",
+      "contentsText": "hello im bora",
+      "likes": "286",
+      "comments": [
+        {
+          "userName": "chicken",
+          "timeStame": 1655885610299,
+          "content": "123"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1655991691222,
+          "content": "안녕하세오"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656049296113,
+          "content": "끊기지않은긴문자예시끊기지않은긴문자예시끊기지않은긴문자예시끊기지않은긴문자예시끊기지않은긴문자예시끊기지않은긴문자예시끊기지않은긴문자예시끊기지않은긴문자예시끊기지않은긴문자예시"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656066132051,
+          "content": ""
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656066644557,
+          "content": "afdsfadsf sdfds afdsf asdf asdfadsf asfdsaf ads fasd fadsf ads fasd "
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656066758476,
+          "content": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "writer": "ddubi",
+      "writerImgUrl": "https://user-images.githubusercontent.com/34260967/174717616-aed62339-a269-46ce-8a51-ba93919d27f4.jpg",
+      "contentsImgUrl": "https://source.unsplash.com/random/2080x500",
+      "contentsText": "hi im ddubi. The lorem ipsum is a placeholder text used in publishing and graphic design. This filler text is a short paragraph that contains all the letters of the alphabet. The characters are spread out evenly so that the reader's attention is focused on the layout of the text instead of its content",
+      "likes": "1,211",
+      "comments": [
+        {
+          "userName": "dddddsdd",
+          "timeStamp": "",
+          "content": "abc"
+        },
+        {
+          "userName": "chicken",
+          "timeStame": 1655886906928,
+          "content": "addd"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656050262243,
+          "content": "example tet"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656050269610,
+          "content": "````````````````````````````````"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656050829170,
+          "content": "exaple"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656050833117,
+          "content": "example"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656050859551,
+          "content": "example"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656051106658,
+          "content": "example"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656051119807,
+          "content": "example"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1656051121772,
+          "content": "ddd"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "writer": "nana",
+      "writerImgUrl": "https://user-images.githubusercontent.com/34260967/174717616-aed62339-a269-46ce-8a51-ba93919d27f4.jpg",
+      "contentsImgUrl": "https://source.unsplash.com/random/700x1080",
+      "contentsText": "everybody say h-e-l-l-o oooo~",
+      "likes": "2,213",
+      "comments": [
+        {
+          "userName": "hello",
+          "timeStame": 1655878977842,
+          "content": "hihihi"
+        },
+        {
+          "userName": "hello",
+          "timeStame": 1655878986000,
+          "content": "hihihi"
+        },
+        {
+          "userName": "chicken",
+          "timeStame": 1655887695528,
+          "content": "asdfa"
+        },
+        {
+          "userName": "qhtjd2131@nate.com",
+          "timeStame": 1655991668779,
+          "content": "dorara"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userName": "qhtjd2131@gmail.com",
+      "passWord": "Abcd1234!"
+    },
+    {
+      "id": 2,
+      "userName": "aaa@bbb.com",
+      "passWord": "Abcd1234!"
+    },
+    {
+      "id": 3,
+      "userName": "qhtjd2131@nate.com",
+      "passWord": "Abcd1234!"
+    }
+  ]
+}

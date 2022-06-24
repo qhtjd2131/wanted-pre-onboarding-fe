@@ -8,6 +8,10 @@ const GlobalStyles = createGlobalStyle`
    outline:none;
    border:none;
  }
+ body, html, #root{
+   height : 100%;
+ }
+ 
 `;
 
 export default GlobalStyles;
