@@ -27,14 +27,14 @@ npm run start
 <br><br>
 
 **추가로 설치된 라이브러리**
-- react-icons 
-icon 사용
+- react-icons
+  - icon 사용
 - json-server
-Restful mock server 구현
+  - Restful mock server 구현
 - polished
-style-components 에서 lighten, darken function 사용.
+  - style-components 에서 lighten, darken function 사용.
 - axios
-json-server와 http 통신
+  - json-server와 http 통신
 ---
 
 ## Assignment 1 - Login 
@@ -47,12 +47,15 @@ json-server와 http 통신
   - InputPassWord 컴포넌트가 focus 상태일때 'Enter' 키로 로그인 할 수 있게 구현.
   - 사용자가 페이지를 닫고 다시 접속할 때(로그아웃 X), login page를 건너뛰고, main page로 바로 이동.
 
+  <br>
 ## Assignment 2 - GNB
 
 - `position : sticky` property를 사용하여, 레이아웃을 차지하면서 fixed된 효과 구현.
 - window width가 600px 미만일 때, Input 컴포넌트 `display : none`
 - 로그아웃 버튼, 기능 구현
   - 로그아웃 시, localStorage에 저장된 유저정보 삭제 후 login page로 이동.
+
+  <br>
 
 ## Assignment3 - Validation
 - id validation check function
@@ -103,6 +106,7 @@ json-server와 http 통신
   ```
   로그인 검증 방법은 ID확인 => PW확인 순으로 이루어 진다. ID확인에서 실패한다면 PW확인은 이루어지지 않는다.
 
+  <br>
 
 ## Assignment4 - Routing
 
@@ -121,6 +125,8 @@ json-server와 http 통신
   - localStorage에 currentUser 존재여부 확인
   - currentUser 존재 시, main page 그대로 유지
   - currentUser 없을 시, login page로 이동
+
+  <br>
 
 ## Assignment5 - Feeds
 - feed
@@ -155,6 +161,7 @@ json-server와 http 통신
   - 예시 피드 이미지로 400x400, 2080x500, 700x1080 사이즈를 사용함.
   
 
+<br><br>
 
 ## 사용자 관점에서의 개발 사항
 - login page 에서 InputPassWord 컴포넌트가 focus 상태일때 'Enter' 키로 로그인 할 수 있게 구현.
@@ -165,6 +172,7 @@ json-server와 http 통신
 - Feed 댓글이 비어있다면, 사용자의 클릭 실수를 대비해 댓글 게시기능 동작하지 않음.
 - Feed 댓글이 끊기지 않은 긴 영어 단어로 이루어 져 있을 때, overflow 되는 현상을 `word-break: break-all;` 속성으로 방지.
 
+<br><br>
 
 ## 마치며...
 
